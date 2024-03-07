@@ -1,22 +1,12 @@
 pipeline {
-    agent any
- stages {
-    stage('Clone') {
+    agent {
+        docker { image 'node:20.11.1-alpine3.19' }
+    }
+    stages {
+        stage('Test') {
             steps {
-                git branch: 'main', url: 'https://github.com/tinphancr7/jenkins-github.git'
+                sh 'node --version'
             }
         }
-      
-    stage('Publish image to Docker Hub') {
-          
-        steps {
-            withDockerRegistry(credentialsId: "docker-hub", url: "https://index.docker.io/v1/") {
-                sh 'docker build -t tinphancr7/jenkins-github .'
-                sh 'docker push tinphancr7/jenkins-github'
-        }
-                  
-          }
-        }
-     
- }
+    }
 }

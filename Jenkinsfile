@@ -22,7 +22,7 @@ pipeline {
           
             steps {
        sshagent(['ssh-agent']) {
-         sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 54.221.33.13 touch text.txt'
+         sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 54.221.33.13 touch test.txt'
 }
                   
           }

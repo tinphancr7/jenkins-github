@@ -11,7 +11,7 @@ pipeline {
           
         steps {
             withDockerRegistry(credentialsId: "docker-hub", url: "https://index.docker.io/v1/") {
-                sh 'docker build -t tinphancr7/jenkins-github .'
+            sh 'docker build -t tinphancr7/jenkins-github .'
                 sh 'docker push tinphancr7/jenkins-github'
         }
                   

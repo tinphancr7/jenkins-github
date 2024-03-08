@@ -18,7 +18,7 @@ pipeline {
           }
         }
      
-  stage('Publish image to Docker Hub') {
+  stage('remote ssh') {
           
             steps {
        sshagent(['ssh-agent']) {

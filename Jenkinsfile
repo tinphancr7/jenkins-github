@@ -18,15 +18,15 @@ pipeline {
           }
         }
      
-//   stage('remote ssh') {
+  stage('remote ssh') {
           
-//             steps {
-//        sshagent(['ssh-agent']) {
-//          sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 54.221.33.13 touch text.txt'
-// }
+            steps {
+       sshagent(['ssh-agent']) {
+         sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 54.221.33.13 touch text.txt'
+}
                   
-//           }
-//         }
+          }
+        }
      
  }
 }

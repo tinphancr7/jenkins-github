@@ -18,5 +18,15 @@ pipeline {
           }
         }
      
+  stage('Publish image to Docker Hub') {
+          
+            steps {
+       sshagent(['ssh-agent']) {
+         sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 54.221.33.13 touch text.txt'
+}
+                  
+          }
+        }
+     
  }
 }
